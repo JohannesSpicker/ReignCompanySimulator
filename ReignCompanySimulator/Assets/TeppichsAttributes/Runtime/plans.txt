@@ -1,8 +1,12 @@
+an attribute is in a statContainer
+
+attribute
+derived attribute
+resource
 
 wants a "stat with max value" (i.e. a resource)
 
 need statcontainer
 need statconfig
-
 
 I need an AttributeData flyweight instead of the StatName enum

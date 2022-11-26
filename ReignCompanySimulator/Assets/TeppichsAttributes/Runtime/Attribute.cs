@@ -1,21 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using TeppichsAttributes.Runtime;
+using UnityEngine;
 
 namespace TeppichsAttributes
 {
-    [Serializable]
-    public class Attribute
+    public class Attribute 
     {
-        //attribute data
-        
-        
+        private AttributeData data;
+        private float         baseValue;
+
+        [SerializeField, ReadOnly]
+        private float currentValue;
+
+        private List<Modifier> modifiers = new();
+
+        public Attribute(AttributeData data, float baseValue)
+        {
+            this.data      = data;
+            this.baseValue = baseValue;
+        }
+
+        protected Attribute() { throw new NotImplementedException(); }
     }
 
-    [Serializable]
-    public class AttributeData
+    public abstract class DerivedAttribute : Attribute
     {
-        [SerializeField] public string inGameName;
-        [SerializeField] public bool usesMaxValue = false;
-        [SerializeField] public float maxValue = 0f;
-        
+        //refers to attributes it derives from
+        //gets baseValue via the related attributes, then adds its own modifiers
+    }
+
+    public class Resource : Attribute
+    {
+        //modifiers are added immediately, not stored
     }
 }

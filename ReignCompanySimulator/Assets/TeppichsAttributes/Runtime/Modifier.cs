@@ -6,9 +6,9 @@ namespace TeppichsAttributes.Runtime
     [Serializable]
     public class Modifier
     {
-        [SerializeField] public  ModifierType type;
+        [SerializeField] public ModifierType type;
         [SerializeField] public float        value;
-        [SerializeField] public  object       source;
+        [SerializeField] public object       source;
 
         #region Constructors
 
