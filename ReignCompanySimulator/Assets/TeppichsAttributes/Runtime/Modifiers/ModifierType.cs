@@ -1,4 +1,4 @@
-﻿namespace TeppichsAttributes.Runtime
+﻿namespace TeppichsAttributes.Modifiers
 {
     public enum ModifierType
     {

@@ -1,4 +1,4 @@
-﻿namespace PackageTemplate.Tests.Editor
+﻿namespace TeppichsAttributes.Tests.Editor
 {
     public class EditorExampleTest
     {

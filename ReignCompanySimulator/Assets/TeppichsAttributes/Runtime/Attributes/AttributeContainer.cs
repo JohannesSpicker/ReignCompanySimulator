@@ -1,7 +1,8 @@
 ﻿using System;
+using TeppichsAttributes.Data;
 using TeppichsTools.Data;
 
-namespace TeppichsAttributes.Runtime
+namespace TeppichsAttributes.Attributes
 {
     [Serializable]
     public class AttributeContainer
@@ -12,11 +13,11 @@ namespace TeppichsAttributes.Runtime
     }
 
     [Serializable]
-    public class StatDictionary : UnitySerializedDictionary<AttributeData, Attribute> { }
+    public class StatDictionary : UnitySerializedDictionary<AttributeData, Stat> { }
 
     [Serializable]
-    public class DerivedStatDictionary : UnitySerializedDictionary<DerivedStatData, Attribute> { }
+    public class DerivedStatDictionary : UnitySerializedDictionary<DerivedStatData, DerivedStat> { }
 
     [Serializable]
-    public class ResourceDictionary : UnitySerializedDictionary<AttributeData, Attribute> { }
+    public class ResourceDictionary : UnitySerializedDictionary<AttributeData, Resource> { }
 }
