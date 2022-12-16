@@ -10,8 +10,8 @@ namespace TeppichsAttributes
     [Serializable]
     public class AttributeData : ScriptableObject
     {
-        [SerializeField] public  string inGameName; //TODO: exchange for localizedString
-        [SerializeField] private Sprite sprite;
+        [SerializeField] public string inGameName; //TODO: exchange for localizedString
+        [SerializeField] public Sprite sprite;
 
         [SerializeField] public bool  usesMaxValue;
         [SerializeField] public float maxValue;
@@ -20,8 +20,17 @@ namespace TeppichsAttributes
     }
 
     [Serializable]
-    public class DerivedAttributeData : AttributeData
+    public class DerivedStatData : AttributeData
     {
-        [SerializeField] private List<AttributeData> factors = new();
+        [SerializeField] public List<AttributeData> factors = new();
+    }
+
+    [Serializable]
+    public class ResourceData : AttributeData
+    {
+        [SerializeField] public AttributeData maxAttribute;
+
+        [SerializeField] public bool increaseValueWithMaxAttribute;
+        [SerializeField] public bool decreaseValueWithMaxAttribute;
     }
 }
