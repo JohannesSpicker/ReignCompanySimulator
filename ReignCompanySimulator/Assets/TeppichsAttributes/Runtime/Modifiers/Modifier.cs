@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TeppichsAttributes.Modifiers
 {
     [Serializable]
-    public class Modifier
+    public sealed class Modifier
     {
         [SerializeField]     public ModifierType type;
         [SerializeField]     public float        value;

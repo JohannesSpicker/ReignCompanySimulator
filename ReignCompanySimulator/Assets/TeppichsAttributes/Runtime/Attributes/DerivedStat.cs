@@ -8,7 +8,7 @@ namespace TeppichsAttributes.Attributes
     ///     refers to attributes it derives from
     ///     gets baseValue via the related attributes, then adds its own modifiers
     /// </summary>
-    public class DerivedStat : Stat
+    public sealed class DerivedStat : Stat
     {
         private readonly List<Stat> factors;
 

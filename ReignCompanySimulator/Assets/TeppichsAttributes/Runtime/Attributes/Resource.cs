@@ -8,7 +8,7 @@ namespace TeppichsAttributes.Attributes
     /// <summary>
     ///     modifiers are added immediately, not stored
     /// </summary>
-    public class Resource : Attribute
+    public sealed class Resource : Attribute
     {
         private readonly Attribute    maxAttribute;
         private readonly ResourceData resourceData;

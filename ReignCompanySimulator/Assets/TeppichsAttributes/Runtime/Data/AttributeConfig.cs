@@ -8,7 +8,7 @@ using UnityEngine;
 namespace TeppichsAttributes.Data
 {
     [CreateAssetMenu(menuName = "TeppichsAttributes/AttributeConfig", order = 0)]
-    public class AttributeConfig : ScriptableObject
+    public sealed class AttributeConfig : ScriptableObject
     {
         [SerializeField] public StatConfigDictionary        stats        = new();
         [SerializeField] public DerivedStatConfigDictionary derivedStats = new();

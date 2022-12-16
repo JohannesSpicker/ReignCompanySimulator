@@ -5,7 +5,7 @@ using TeppichsTools.Data;
 namespace TeppichsAttributes.Attributes
 {
     [Serializable]
-    public class AttributeContainer
+    public sealed class AttributeContainer
     {
         public StatDictionary        stats        = new();
         public DerivedStatDictionary derivedStats = new();
