@@ -1,0 +1,5 @@
+﻿- create a sample
+- build UI stuff
+- create UI sample
+
+- show/sample command pattern with invokers?
