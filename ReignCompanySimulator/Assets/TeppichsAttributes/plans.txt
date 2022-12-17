@@ -3,3 +3,5 @@
 - create UI sample
 
 - show/sample command pattern with invokers?
+
+- write tests lol

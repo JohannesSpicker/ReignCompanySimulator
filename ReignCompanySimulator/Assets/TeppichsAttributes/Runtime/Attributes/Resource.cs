@@ -13,18 +13,24 @@ namespace TeppichsAttributes.Attributes
         private readonly Attribute    maxAttribute;
         private readonly ResourceData resourceData;
 
-        public Resource(ResourceData data, float baseValue, Attribute maxAttribute) : base(data, baseValue)
+        public Resource(ResourceData data, float baseValue, Attribute maxAttribute = null) : base(data, baseValue)
         {
-            resourceData                                 =  data;
-            this.maxAttribute                            =  maxAttribute;
-            maxAttribute.OnAttributeValueChangedByAmount += ReactToMaxAttributeChange;
+            resourceData      = data;
+            this.maxAttribute = maxAttribute;
+
+            if (maxAttribute is { })
+                maxAttribute.OnAttributeValueChangedByAmount += ReactToMaxAttributeChange;
         }
 
-        ~Resource() { maxAttribute.OnAttributeValueChangedByAmount -= ReactToMaxAttributeChange; }
+        ~Resource()
+        {
+            if (maxAttribute is { })
+                maxAttribute.OnAttributeValueChangedByAmount -= ReactToMaxAttributeChange;
+        }
 
         private void ReactToMaxAttributeChange(float change)
         {
-            if ((0         < change && resourceData.increaseValueInMaxAttributeChange)
+            if ((0         < change && resourceData.increaseValueOnMaxAttributeChange)
                 || (change < 0      && resourceData.decreaseValueOnMaxAttributeChange))
                 AddToValue(change);
             else if (maxAttribute.Value < Value)

@@ -8,7 +8,7 @@ namespace TeppichsAttributes.Data
     {
         [SerializeField] public AttributeData maxAttribute;
 
-        [SerializeField] public bool increaseValueInMaxAttributeChange;
+        [SerializeField] public bool increaseValueOnMaxAttributeChange;
         [SerializeField] public bool decreaseValueOnMaxAttributeChange;
     }
 }
