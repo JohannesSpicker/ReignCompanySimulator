@@ -19,5 +19,5 @@ namespace TeppichsAttributes.Attributes
     public class DerivedStatDictionary : UnitySerializedDictionary<DerivedStatData, DerivedStat> { }
 
     [Serializable]
-    public class ResourceDictionary : UnitySerializedDictionary<AttributeData, Resource> { }
+    public class ResourceDictionary : UnitySerializedDictionary<ResourceData, Resource> { }
 }

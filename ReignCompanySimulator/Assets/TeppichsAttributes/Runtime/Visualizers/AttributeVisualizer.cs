@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace TeppichsAttributes.Visualizers
 {
-    public abstract class AttributeVisualizer : MonoBehaviour
+    public abstract class AttributeVisualizer<T> : MonoBehaviour where T : Attribute
     {
-        private Attribute attribute;
+        private T attribute;
 
         private void OnEnable()
         {
@@ -15,7 +15,7 @@ namespace TeppichsAttributes.Visualizers
 
         private void OnDisable() => attribute.OnAttributeValueChanged -= Refresh;
 
-        public void Initialize(Attribute att)
+        public void Initialize(T att)
         {
             attribute                   =  att;
             att.OnAttributeValueChanged += Refresh;

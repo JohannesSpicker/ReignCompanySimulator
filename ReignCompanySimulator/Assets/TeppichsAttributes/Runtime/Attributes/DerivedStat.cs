@@ -13,8 +13,7 @@ namespace TeppichsAttributes.Attributes
     {
         private readonly List<Stat> factors;
 
-        //need to get the concrete attributes into here for calculations
-        public DerivedStat(DerivedStatData data, float baseValue, IEnumerable<Stat> factors) : base(data, baseValue)
+        public DerivedStat(DerivedStatData data, IEnumerable<Stat> factors) : base(data, 0f)
         {
             this.factors = factors.ToList();
 

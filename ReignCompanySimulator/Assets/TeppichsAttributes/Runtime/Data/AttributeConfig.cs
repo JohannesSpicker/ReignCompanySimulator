@@ -7,12 +7,12 @@ using UnityEngine;
 
 namespace TeppichsAttributes.Data
 {
-    [CreateAssetMenu(menuName = "TeppichsAttributes/AttributeConfig", order = 0)]
+    [CreateAssetMenu(menuName = "TeppichsAttributes/AttributeConfig", order = 0), Serializable]
     public sealed class AttributeConfig : ScriptableObject
     {
-        [SerializeField] public StatConfigDictionary        stats        = new();
-        [SerializeField] public DerivedStatConfigDictionary derivedStats = new();
-        [SerializeField] public ResourceConfigDictionary    resources    = new();
+        [SerializeField] public StatConfigDictionary     stats        = new();
+        [SerializeField] public List<DerivedStatData>    derivedStats = new();
+        [SerializeField] public ResourceConfigDictionary resources    = new();
 
         public void ApplyConfig(AttributeContainer container)
         {
@@ -23,10 +23,9 @@ namespace TeppichsAttributes.Data
             foreach (KeyValuePair<AttributeData, float> stat in stats)
                 container.stats[stat.Key] = new Stat(stat.Key, stat.Value);
 
-            foreach (KeyValuePair<DerivedStatData, float> derivedStat in derivedStats)
-                container.derivedStats[derivedStat.Key] = new DerivedStat(derivedStat.Key, derivedStat.Value,
-                                                                          derivedStat.Key.factors.Select(factor =>
-                                                                              container.stats[factor]));
+            foreach (DerivedStatData derivedStat in derivedStats)
+                container.derivedStats[derivedStat] =
+                    new DerivedStat(derivedStat, derivedStat.factors.Select(factor => container.stats[factor]));
 
             foreach (KeyValuePair<ResourceData, float> resource in resources)
                 container.resources[resource.Key] = new Resource(resource.Key, resource.Value,

@@ -209,13 +209,13 @@ namespace TeppichsAttributes.Tests.Editor
                     List<Modifier> modifiers = new();
 
                     foreach (float value in flatModifierValues)
-                        modifiers.Add(A.Modifier.WithType(ModifierType.Flat).WithValue(value));
+                        modifiers.Add(A.Modifier.WithValue(value).WithType(ModifierType.Flat));
 
                     foreach (float value in percentageAddModifierValues)
-                        modifiers.Add(A.Modifier.WithType(ModifierType.PercentAdd).WithValue(value));
+                        modifiers.Add(A.Modifier.WithValue(value).WithType(ModifierType.PercentAdd));
 
                     foreach (float value in percentageMultModifierValues)
-                        modifiers.Add(A.Modifier.WithType(ModifierType.PercentMult).WithValue(value));
+                        modifiers.Add(A.Modifier.WithValue(value).WithType(ModifierType.PercentMult));
 
                     Stat stat = A.Stat.WithAttributeDate(An.AttributeData).WithBaseValue(baseValue)
                                  .WithModifiers(modifiers);
