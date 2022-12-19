@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using TeppichsAttributes.Data;
 
-namespace TeppichsAttributes.Builders
+namespace TeppichsAttributes.Builders.Data
 {
     public class DerivedStatDataBuilder : BaseAttributeDataBuilder<DerivedStatData>
     {

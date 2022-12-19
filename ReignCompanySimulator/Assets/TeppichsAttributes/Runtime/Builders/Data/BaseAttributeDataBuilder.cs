@@ -2,7 +2,7 @@ using TeppichsAttributes.Data;
 using TeppichsTools.Creation;
 using UnityEngine;
 
-namespace TeppichsAttributes.Builders
+namespace TeppichsAttributes.Builders.Data
 {
     public abstract class BaseAttributeDataBuilder<T> : Builder<T> where T : AttributeData
     {

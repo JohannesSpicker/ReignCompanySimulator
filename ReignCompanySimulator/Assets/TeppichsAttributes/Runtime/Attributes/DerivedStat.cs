@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TeppichsAttributes.Data;
+using TeppichsTools.Math;
 
 namespace TeppichsAttributes.Attributes
 {
@@ -16,13 +17,12 @@ namespace TeppichsAttributes.Attributes
         public DerivedStat(DerivedStatData data, float baseValue, IEnumerable<Stat> factors) : base(data, baseValue)
         {
             this.factors = factors.ToList();
-            
+
             foreach (Stat factor in this.factors)
                 factor.OnAttributeValueChanged += ReactToFactorValueChange;
         }
 
-        protected override float BaseValue =>
-            factors.Select(factor => factor.Value).Aggregate(1f, (acc, val) => acc * val);
+        protected override float BaseValue => factors.Select(factor => factor.Value).Product();
 
         ~DerivedStat()
         {

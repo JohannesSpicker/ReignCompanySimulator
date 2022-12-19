@@ -1,6 +1,6 @@
 ﻿using TeppichsAttributes.Data;
 
-namespace TeppichsAttributes.Builders
+namespace TeppichsAttributes.Builders.Data
 {
     public class ResourceDataBuilder : BaseAttributeDataBuilder<ResourceData>
     {

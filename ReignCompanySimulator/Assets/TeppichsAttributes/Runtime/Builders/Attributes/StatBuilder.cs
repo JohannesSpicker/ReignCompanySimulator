@@ -4,7 +4,7 @@ using TeppichsAttributes.Data;
 using TeppichsAttributes.Modifiers;
 using TeppichsTools.Creation;
 
-namespace TeppichsAttributes.Builders
+namespace TeppichsAttributes.Builders.Attributes
 {
     public class StatBuilder : Builder<Stat>
     {
