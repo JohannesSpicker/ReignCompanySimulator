@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using TeppichsAttributes.Attributes;
 using TeppichsAttributes.Data;
+using TeppichsTools.Behavior;
 using TeppichsTools.Creation.Pools;
 using UnityEngine;
 
 namespace TeppichsAttributes.Visualizers
 {
-    public class AttributeContainerVisualizer : MonoBehaviour
+    public class AttributeContainerVisualizer : TransformCachingMonoBehaviour
     {
         [SerializeField] private AttributeVisualizer<Stat>        statVisualizerPrefab;
         [SerializeField] private AttributeVisualizer<DerivedStat> derivedStatVisualizerPrefab;
@@ -20,12 +21,12 @@ namespace TeppichsAttributes.Visualizers
 
         private void Awake()
         {
-            statPool = new PrefabObjectPool<AttributeVisualizer<Stat>>(statVisualizerPrefab, transform);
+            statPool = new PrefabObjectPool<AttributeVisualizer<Stat>>(statVisualizerPrefab, myTransform);
 
             derivedStatPool =
-                new PrefabObjectPool<AttributeVisualizer<DerivedStat>>(derivedStatVisualizerPrefab, transform);
+                new PrefabObjectPool<AttributeVisualizer<DerivedStat>>(derivedStatVisualizerPrefab, myTransform);
 
-            resourcePool = new PrefabObjectPool<AttributeVisualizer<Resource>>(resourceVisualizerPrefab, transform);
+            resourcePool = new PrefabObjectPool<AttributeVisualizer<Resource>>(resourceVisualizerPrefab, myTransform);
         }
 
         public void Initialize(AttributeContainer attributeContainer)
