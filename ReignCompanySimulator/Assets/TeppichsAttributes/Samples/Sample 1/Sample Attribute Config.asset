@@ -15,13 +15,13 @@ MonoBehaviour:
   stats:
     keyData:
     - {fileID: 11400000, guid: 8880e7f30ae4eb74fa2b4e0cfe54e37d, type: 2}
+    - {fileID: 11400000, guid: 0fba4cb084344b14f9a627c426273343, type: 2}
     valueData:
     - 1
+    - 2
   derivedStats:
-    keyData:
-    - {fileID: 11400000, guid: a7c261125180c7f4e8a9ad8067282993, type: 2}
-    valueData:
-    - 0
+  - {fileID: 11400000, guid: a7c261125180c7f4e8a9ad8067282993, type: 2}
+  - {fileID: 11400000, guid: f2d22b80d21dc7d458679d6a16c05978, type: 2}
   resources:
     keyData:
     - {fileID: 11400000, guid: caf87ef08be49784c92b7f832dfe2955, type: 2}
