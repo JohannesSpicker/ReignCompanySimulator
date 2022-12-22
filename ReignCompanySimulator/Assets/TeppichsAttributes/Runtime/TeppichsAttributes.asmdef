@@ -2,7 +2,8 @@
     "name": "TeppichsAttributes",
     "rootNamespace": "",
     "references": [
-        "GUID:421fd12279173a649a2ff04b70fb29de"
+        "GUID:421fd12279173a649a2ff04b70fb29de",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

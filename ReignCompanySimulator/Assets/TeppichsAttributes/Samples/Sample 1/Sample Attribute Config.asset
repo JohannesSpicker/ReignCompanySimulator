@@ -25,5 +25,7 @@ MonoBehaviour:
   resources:
     keyData:
     - {fileID: 11400000, guid: caf87ef08be49784c92b7f832dfe2955, type: 2}
+    - {fileID: 11400000, guid: 3b8f43956373a7e4b9f18070ac4f58ad, type: 2}
     valueData:
     - 1
+    - 2
