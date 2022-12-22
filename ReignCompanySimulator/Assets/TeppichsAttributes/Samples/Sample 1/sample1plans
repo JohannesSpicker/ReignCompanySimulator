@@ -1,0 +1,8 @@
+//visualize some stats
+// build a prefab visualizer for each of: stat, derivedStat, resource
+// => probably want to do this via prefabVariants
+//and then put them together in an AttributeContainerVisualizer
+
+//so show each of them on their own, then show them together.
+
+//then add functionality to play around with all of them
