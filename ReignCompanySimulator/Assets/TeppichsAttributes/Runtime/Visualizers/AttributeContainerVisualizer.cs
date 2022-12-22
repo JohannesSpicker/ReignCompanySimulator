@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TeppichsAttributes.Attributes;
 using TeppichsAttributes.Data;
+using TeppichsAttributes.Visualizers.Primitives;
 using TeppichsTools.Behavior;
 using TeppichsTools.Creation.Pools;
 using UnityEngine;

@@ -10,8 +10,8 @@ namespace TeppichsAttributes.Attributes
     /// </summary>
     public sealed class Resource : Attribute
     {
-        private readonly Attribute    maxAttribute;
-        private readonly ResourceData resourceData;
+        public readonly Attribute    maxAttribute;
+        public readonly ResourceData resourceData;
 
         public Resource(ResourceData data, float baseValue, Attribute maxAttribute = null) : base(data, baseValue)
         {

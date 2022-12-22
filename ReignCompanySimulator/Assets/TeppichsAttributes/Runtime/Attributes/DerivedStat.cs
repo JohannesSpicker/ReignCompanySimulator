@@ -12,6 +12,7 @@ namespace TeppichsAttributes.Attributes
     public sealed class DerivedStat : Stat
     {
         private readonly List<Stat> factors;
+        public IEnumerable<Stat> Factors => factors;
 
         public DerivedStat(DerivedStatData data, IEnumerable<Stat> factors) : base(data, 0f)
         {

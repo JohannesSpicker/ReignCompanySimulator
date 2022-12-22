@@ -9,6 +9,8 @@ namespace TeppichsAttributes.Attributes
     {
         private readonly List<Modifier> modifiers = new();
 
+        public IEnumerable<Modifier> Modifiers => modifiers;
+
         public Stat(AttributeData data, float baseValue) : base(data, baseValue) { }
 
         #region Modifiers
