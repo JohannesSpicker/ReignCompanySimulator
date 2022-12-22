@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sample Attribute Data
   m_EditorClassIdentifier: 
   inGameName: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 04d618748cf398b47a8eca9839227293, type: 3}
   usesMaxValue: 0
   maxValue: 0
   usesMinValue: 0
