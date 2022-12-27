@@ -7,23 +7,22 @@ namespace TeppichsAttributes.Utils
     public static class ListHelpers
     {
         public static void Shuffle<T>(this IList<T> list)
-        {
-            int n = list.Count;
-            while (n > 1)
+        {   
+            for (int i = list.Count - 1; 0 < i; --i)
             {
-                n--;
-                int k = ThreadSafeRandom.ThisThreadsRandom.Next(n + 1);
-                (list[k], list[n]) = (list[n], list[k]);
+                int swap = ThreadSafeRandom.ThisThreadsRandom.Next(i + 1);
+                (list[i], list[swap]) = (list[swap], list[i]);
             }
         }
-        
+
         private static class ThreadSafeRandom
         {
             [ThreadStatic] private static Random Local;
 
             public static Random ThisThreadsRandom
             {
-                get => Local ??= new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId));
+                get => Local ??=
+                    new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId));
             }
         }
     }
