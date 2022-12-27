@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace TeppichsAttributes.Samples.Sample_1
 {
-    public class AttributeContainerVisualizerFiller : ThingCacher<AttributeContainerVisualizer>
+    public class AttributeContainerVisualizerFiller : ComponentCacher<AttributeContainerVisualizer>
     {
         [SerializeField] private AttributeConfig config;
         private AttributeContainer container = new();
@@ -18,7 +18,7 @@ namespace TeppichsAttributes.Samples.Sample_1
         }
     }
 
-    public class ThingCacher<T> : TransformCachingMonoBehaviour
+    public class ComponentCacher<T> : TransformCachingMonoBehaviour
     {
         [SerializeField, HideInInspector] protected T myComponent;
 

@@ -6,6 +6,7 @@ using TeppichsAttributes.Attributes;
 using TeppichsAttributes.Builders;
 using TeppichsAttributes.Data;
 using TeppichsAttributes.Modifiers;
+using TeppichsAttributes.Utils;
 using TeppichsTools.Math;
 
 namespace TeppichsAttributes.Tests.Editor
@@ -190,7 +191,7 @@ namespace TeppichsAttributes.Tests.Editor
                 }
 
                 [Test]
-                public static void ModifierTypesStackRight(
+                public static void ModifierTypesStackRightWhenRandomized(
                     [Random(float.MinValue / 512f, float.MaxValue / 512f, numberOfTests)] float baseValue,
                     [Random(float.MinValue / 512f, float.MaxValue / 512f, 1)]             float mod1,
                     [Random(float.MinValue / 512f, float.MaxValue / 512f, 1)]             float mod2,
@@ -217,6 +218,8 @@ namespace TeppichsAttributes.Tests.Editor
                     foreach (float value in percentageMultModifierValues)
                         modifiers.Add(A.Modifier.WithValue(value).WithType(ModifierType.PercentMult));
 
+                    modifiers.Shuffle();
+                    
                     Stat stat = A.Stat.WithAttributeDate(An.AttributeData).WithBaseValue(baseValue)
                                  .WithModifiers(modifiers);
 
