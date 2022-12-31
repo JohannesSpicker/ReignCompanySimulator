@@ -6,14 +6,14 @@ namespace TeppichsAttributes.Attributes
 {
     public abstract class Attribute
     {
-        public readonly float baseValue;
+        public readonly float         baseValue;
         public readonly AttributeData data;
 
         protected Attribute(AttributeData data, float baseValue)
         {
-            this.data = data;
+            this.data      = data;
             this.baseValue = baseValue;
-            Value = baseValue;
+            Value          = baseValue;
         }
 
         #region Value
@@ -39,15 +39,9 @@ namespace TeppichsAttributes.Attributes
         public event Action<float> OnAttributeValueChanged;
         public event Action<float> OnAttributeValueChangedByAmount;
 
-        protected void InvokeOnAttributeValueChanged()
-        {
-            OnAttributeValueChanged?.Invoke(Value);
-        }
-
-        protected void InvokeOnAttributeValueChangedByAmount(float before)
-        {
+        protected void InvokeOnAttributeValueChanged() => OnAttributeValueChanged?.Invoke(Value);
+        protected void InvokeOnAttributeValueChangedByAmount(float before) =>
             OnAttributeValueChangedByAmount?.Invoke(Value - before);
-        }
 
         #endregion
     }
