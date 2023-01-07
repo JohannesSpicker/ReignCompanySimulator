@@ -1,7 +1,7 @@
 ﻿{
   "name": "com.teppich.teppichsattributes",
-  "version": "0.0.28",
-  "displayName": "PACKAGENAME",
+  "version": "0.0.1",
+  "displayName": "Teppich's Attributes",
   "description": "",
   "unity": "2019.1",
   "unityRelease": "0b5",
@@ -9,8 +9,8 @@
     "com.teppich.teppichstools": "0.0.29"
   },
   "keywords": [
-    "tool",
-    "utility"
+    "rpg",
+    "stats"
   ],
   "author": {
     "name": "Teppich Spicker",
