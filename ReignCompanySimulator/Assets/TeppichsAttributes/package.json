@@ -1,0 +1,20 @@
+﻿{
+  "name": "com.teppich.teppichsattributes",
+  "version": "0.0.1",
+  "displayName": "Teppich's Attributes",
+  "description": "",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "dependencies": {
+    "com.teppich.teppichstools": "0.0.29"
+  },
+  "keywords": [
+    "rpg",
+    "stats"
+  ],
+  "author": {
+    "name": "Teppich Spicker",
+    "email": "johannesspicker@me.com",
+    "url": "https://github.com/JohannesSpicker"
+  }  
+}
