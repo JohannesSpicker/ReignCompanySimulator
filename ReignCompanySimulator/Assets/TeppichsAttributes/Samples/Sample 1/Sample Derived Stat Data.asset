@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4303d07234f34de28b735de9287531b4, type: 3}
   m_Name: Sample Derived Stat Data
   m_EditorClassIdentifier: 
-  inGameName: 
+  inGameName: Derived Stat 0
   sprite: {fileID: 21300000, guid: bf8ec76fec3c63e4688a7ae61bc988c2, type: 3}
   usesMaxValue: 0
   maxValue: 0

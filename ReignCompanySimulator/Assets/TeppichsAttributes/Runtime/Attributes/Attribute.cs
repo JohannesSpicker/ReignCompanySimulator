@@ -1,5 +1,6 @@
 ﻿using System;
 using TeppichsAttributes.Data;
+using TeppichsAttributes.Modifiers;
 using UnityEngine;
 
 namespace TeppichsAttributes.Attributes
@@ -44,5 +45,7 @@ namespace TeppichsAttributes.Attributes
             OnAttributeValueChangedByAmount?.Invoke(Value - before);
 
         #endregion
+
+        public abstract void AddModifier(Modifier modifier);
     }
 }

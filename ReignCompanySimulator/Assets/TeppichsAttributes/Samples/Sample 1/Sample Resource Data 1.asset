@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba1d1f7c80e4d468ff36c00f4fe2e21, type: 3}
   m_Name: Sample Resource Data 1
   m_EditorClassIdentifier: 
-  inGameName: 
+  inGameName: Resource 1
   sprite: {fileID: 21300000, guid: ba7d53673d84c484489aaa6e49de6aa8, type: 3}
   usesMaxValue: 0
   maxValue: 0
   usesMinValue: 0
   minValue: 0
-  maxAttribute: {fileID: 0}
+  maxAttribute: {fileID: 11400000, guid: 0fba4cb084344b14f9a627c426273343, type: 2}
   increaseValueOnMaxAttributeChange: 0
   decreaseValueOnMaxAttributeChange: 0

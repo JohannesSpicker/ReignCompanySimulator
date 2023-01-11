@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253ea4b395d74d9e9dce57caddba5d50, type: 3}
   m_Name: Sample Attribute Data
   m_EditorClassIdentifier: 
-  inGameName: 
+  inGameName: Stat 0
   sprite: {fileID: 21300000, guid: 04d618748cf398b47a8eca9839227293, type: 3}
   usesMaxValue: 0
   maxValue: 0

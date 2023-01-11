@@ -15,7 +15,7 @@ namespace TeppichsAttributes.Attributes
 
         #region Modifiers
 
-        public void AddModifier(Modifier modifier)
+        public override void AddModifier(Modifier modifier)
         {
             modifiers.Add(modifier);
             RecalculateValue();
