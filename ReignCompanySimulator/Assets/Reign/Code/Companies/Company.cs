@@ -11,13 +11,13 @@ namespace Reign.Companies
 
         private void ResetPools() { }
 
-        private void Listen()
+        private void Subscribe()
         {
             GeneralTurnMessages.OnStartOfTurn += ResetPools;
             GeneralTurnMessages.OnEndOfTurn   += CheckForDeath;
         }
 
-        private void Unlisten()
+        private void Unsubscribe()
         {
             GeneralTurnMessages.OnStartOfTurn -= ResetPools;
             GeneralTurnMessages.OnEndOfTurn   -= CheckForDeath;

@@ -18,6 +18,6 @@ MonoBehaviour:
   maxValue: 6
   usesMinValue: 1
   minValue: 0
-  maxAttribute: {fileID: 0}
+  maxAttribute: {fileID: 11400000}
   increaseValueOnMaxAttributeChange: 0
   decreaseValueOnMaxAttributeChange: 0
