@@ -42,7 +42,7 @@ namespace TeppichsAttributes.Visualizers.Primitives
             DisplaySprite(att.data.sprite);
             DisplayMinValue(att.data.minValue);
             DisplayMaxValue(att.data.maxValue);
-            DisplayBaseValue(att.baseValue);
+            DisplayBaseValue(att.BaseValue);
             DisplayValue(att.Value);
         }
 

@@ -7,45 +7,66 @@ namespace TeppichsAttributes.Attributes
 {
     public abstract class Attribute
     {
-        public readonly float         baseValue;
         public readonly AttributeData data;
 
         protected Attribute(AttributeData data, float baseValue)
         {
-            this.data      = data;
-            this.baseValue = baseValue;
-            Value          = baseValue;
+            this.data = data;
+            BaseValue = baseValue;
+            Value     = baseValue;
         }
 
         #region Value
 
+        public float BaseValue { get => baseValue; protected set => baseValue = ClampNewValue(value); }
+        public float Value     { get => value;     protected set => this.value = ClampNewValue(value); }
+
+        private float baseValue;
         private float value;
 
-        public float Value
+        private float ClampNewValue(float newValue)
         {
-            get => value;
-            protected set
-            {
-                if (data.usesMinValue && data.usesMaxValue)
-                    this.value = Mathf.Clamp(value, data.minValue, data.maxValue);
-                else if (data.usesMinValue)
-                    this.value = Mathf.Max(value, data.minValue);
-                else if (data.usesMaxValue)
-                    this.value = Mathf.Min(value, data.maxValue);
-                else
-                    this.value = value;
-            }
+            if (data.usesMinValue && data.usesMaxValue)
+                return Mathf.Clamp(newValue, data.minValue, data.maxValue);
+
+            if (data.usesMinValue)
+                return Mathf.Max(newValue, data.minValue);
+
+            if (data.usesMaxValue)
+                return Mathf.Min(newValue, data.maxValue);
+
+            return newValue;
         }
+
+        #endregion
+
+        #region Modify
+
+        /// <summary>
+        ///     Adds a modifier to the attribute and recalculates the value.
+        ///     Stats use this for temporary modification i.e. equipment.
+        ///     Resources use this for permanent modification.
+        /// </summary>
+        public abstract void AddModifier(Modifier modifier);
+
+        /// <summary>
+        ///     Adds an amount to the baseValue of the attribute.
+        ///     Use this for permanent modifications i.e. leveling up.
+        /// </summary>
+        public abstract void AddToBaseValue(float amount);
+
+        #endregion
+
+        #region Events
 
         public event Action<float> OnAttributeValueChanged;
         public event Action<float> OnAttributeValueChangedByAmount;
 
         protected void InvokeOnAttributeValueChanged() => OnAttributeValueChanged?.Invoke(Value);
+
         protected void InvokeOnAttributeValueChangedByAmount(float before) =>
             OnAttributeValueChangedByAmount?.Invoke(Value - before);
 
         #endregion
-
-        public abstract void AddModifier(Modifier modifier);
     }
 }

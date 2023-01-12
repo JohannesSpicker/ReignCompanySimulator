@@ -15,10 +15,11 @@ namespace TeppichsAttributes.Tests.Editor
     {
         private const int numberOfTests = 5;
 
-        private static class Base
+        private static class BaseValue
         {
             [Test]
-            public static void StatHasBaseValue([Random(float.MinValue, float.MaxValue, numberOfTests)] float baseValue)
+            public static void StatValueHasBaseValue(
+                [Random(float.MinValue, float.MaxValue, numberOfTests)] float baseValue)
             {
                 AttributeData attributeData = An.AttributeData;
                 Stat          stat          = A.Stat.WithAttributeDate(attributeData).WithBaseValue(baseValue);
@@ -27,7 +28,60 @@ namespace TeppichsAttributes.Tests.Editor
             }
 
             [Test]
-            public static void StatIsNotHigherThanMaxValue(
+            public static void StatsBaseValueCanBeAddedTo(
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float baseValue,
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float difference)
+            {
+                AttributeData attributeData = An.AttributeData;
+                Stat          stat          = A.Stat.WithAttributeDate(attributeData).WithBaseValue(baseValue);
+
+                stat.AddToBaseValue(difference);
+
+                stat.BaseValue.Should().Be(baseValue + difference);
+            }
+
+            [Test]
+            public static void StatValueIsBaseValueAfterBaseValueHasBeenAddedTo(
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float baseValue,
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float difference)
+            {
+                AttributeData attributeData = An.AttributeData;
+                Stat          stat          = A.Stat.WithAttributeDate(attributeData).WithBaseValue(baseValue);
+
+                stat.AddToBaseValue(difference);
+
+                stat.Value.Should().Be(baseValue + difference);
+            }
+
+            [Test, TestCase(0f, -1f)]
+            public static void StatBaseValueIsNotHigherThanMaxValue(
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float baseValue,
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float maxValueDifference)
+            {
+                float         maxValue      = baseValue + maxValueDifference;
+                AttributeData attributeData = An.AttributeData.WithMaxValue(maxValue);
+                Stat          stat          = A.Stat.WithAttributeDate(attributeData).WithBaseValue(baseValue);
+
+                stat.BaseValue.Should().BeLessOrEqualTo(maxValue);
+            }
+
+            [Test, TestCase(0f, 1f)]
+            public static void StatBaseValueIsNotLowerThanMinValue(
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float baseValue,
+                [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float minValueDifference)
+            {
+                float         minValue      = baseValue + minValueDifference;
+                AttributeData attributeData = An.AttributeData.WithMinValue(minValue);
+                Stat          stat          = A.Stat.WithAttributeDate(attributeData).WithBaseValue(baseValue);
+
+                stat.BaseValue.Should().BeGreaterOrEqualTo(minValue);
+            }
+        }
+
+        private static class Value
+        {
+            [Test, TestCase(0f, -1f)]
+            public static void StatValueIsNotHigherThanMaxValue(
                 [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float baseValue,
                 [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float maxValueDifference)
             {
@@ -38,8 +92,8 @@ namespace TeppichsAttributes.Tests.Editor
                 stat.Value.Should().BeLessOrEqualTo(maxValue);
             }
 
-            [Test]
-            public static void StatIsNotLowerThanMinValue(
+            [Test, TestCase(0f, 1f)]
+            public static void StatValueIsNotLowerThanMinValue(
                 [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float baseValue,
                 [Random(float.MinValue / 2f, float.MaxValue / 2f, numberOfTests)] float minValueDifference)
             {

@@ -6,8 +6,8 @@ using TeppichsTools.Math;
 namespace TeppichsAttributes.Attributes
 {
     /// <summary>
-    ///     refers to attributes it derives from
-    ///     gets baseValue via the related attributes, then adds its own modifiers
+    ///     Refers to attributes it derives from
+    ///     Gets baseValue via the related attributes, then adds its own modifiers.
     /// </summary>
     public sealed class DerivedStat : Stat
     {
@@ -20,9 +20,11 @@ namespace TeppichsAttributes.Attributes
 
             foreach (Stat factor in this.factors)
                 factor.OnAttributeValueChanged += ReactToFactorValueChange;
+            
+            RecalculateValue();
         }
 
-        protected override float BaseValue => factors.Select(factor => factor.Value).Product();
+        protected override float BaseValueUsedForCalculations => factors.Select(factor => factor.Value).Product();
 
         ~DerivedStat()
         {

@@ -47,8 +47,9 @@ namespace TeppichsAttributes.Attributes
             return true;
         }
 
-        public void Gain(float  amount) => AddToValue(amount);
-        public void Spend(float amount) => AddToValue(-amount);
+        public override void AddToBaseValue(float amount) => Gain(amount);
+        public          void Gain(float           amount) => AddToValue(amount);
+        public          void Spend(float          amount) => AddToValue(-amount);
 
         public override void AddModifier(Modifier modifier) =>
             AlterValue(modifier.value, modifier.type is ModifierType.Flat ? Addition : Multiplication);
@@ -71,6 +72,6 @@ namespace TeppichsAttributes.Attributes
         private void Addition(float       amount) => Value += amount;
         private void Multiplication(float factor) => Value *= factor;
 
-        public void ResetToBaseValue() => AlterValue(baseValue - Value, Addition);
+        public void ResetToBaseValue() => AlterValue(BaseValue - Value, Addition);
     }
 }
