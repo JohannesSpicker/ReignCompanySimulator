@@ -16,20 +16,23 @@ namespace Reign.Companies
             return container;
         }
 
-        private AttributeContainer FillContainer(AttributeContainer container)
+        private Company CreateCompany(AttributeContainer container)
         {
+            Company company = new(CreateAttributeContainer(), qualityDataHolder);
+
             int might       = 1;
             int treasure    = 2;
             int influence   = 3;
             int territory   = 4;
             int sovereignty = 5;
 
-            //TODO: set qualities to values
-            //TODO: build accessors to the qualities
-            
-            return container;
-        }
+            company.Might.AddToBaseValue(might);
+            company.Treasure.AddToBaseValue(treasure);
+            company.Influence.AddToBaseValue(influence);
+            company.Territory.AddToBaseValue(territory);
+            company.Sovereignty.AddToBaseValue(sovereignty);
 
-        public Company CreateCompany() => new(FillContainer(CreateAttributeContainer()));
+            return company;
+        }
     }
 }

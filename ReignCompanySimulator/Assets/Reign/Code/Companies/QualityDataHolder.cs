@@ -7,16 +7,16 @@ namespace Reign.Companies
     [Serializable, CreateAssetMenu(menuName = "ReignCompanySimulator/Companies/QualityHolder", order = 2)]
     public class QualityDataHolder : ScriptableObject
     {
-        [SerializeField] private AttributeData might;
-        [SerializeField] private AttributeData treasure;
-        [SerializeField] private AttributeData influence;
-        [SerializeField] private AttributeData territory;
-        [SerializeField] private AttributeData sovereignty;
+        [SerializeField] public AttributeData might;
+        [SerializeField] public AttributeData treasure;
+        [SerializeField] public AttributeData influence;
+        [SerializeField] public AttributeData territory;
+        [SerializeField] public AttributeData sovereignty;
 
-        [SerializeField] private ResourceData remainingMight;
-        [SerializeField] private ResourceData remainingTreasure;
-        [SerializeField] private ResourceData remainingInfluence;
-        [SerializeField] private ResourceData remainingTerritory;
-        [SerializeField] private ResourceData remainingSovereignty;
+        [SerializeField] public ResourceData remainingMight;
+        [SerializeField] public ResourceData remainingTreasure;
+        [SerializeField] public ResourceData remainingInfluence;
+        [SerializeField] public ResourceData remainingTerritory;
+        [SerializeField] public ResourceData remainingSovereignty;
     }
 }
