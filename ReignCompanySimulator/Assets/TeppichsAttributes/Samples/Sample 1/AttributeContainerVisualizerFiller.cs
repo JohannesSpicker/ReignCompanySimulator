@@ -25,7 +25,7 @@ namespace TeppichsAttributes.Samples.Sample_1
         private void AddModifierToAttribute(AttributeDataHolder.AttributeName attributeName, ModifierType modifierType,
                                             float                             amount) => container
             .GetAttribute(attributeDataHolder
-                              .GetAttribute(attributeName))
+                              .GetAttributeData(attributeName))
             .AddModifier(new Modifier(amount, modifierType, this));
 
         [Button]

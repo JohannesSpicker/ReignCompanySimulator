@@ -1,0 +1,16 @@
+{
+    "name": "Reign",
+    "rootNamespace": "",
+    "references": [
+        "GUID:58fe100f91bb3e24499fdf87975c6d82"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

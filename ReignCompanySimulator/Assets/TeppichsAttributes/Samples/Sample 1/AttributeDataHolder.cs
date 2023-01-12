@@ -26,7 +26,7 @@ namespace TeppichsAttributes.Samples.Sample_1
         [SerializeField] public ResourceData resourceZero;
         [SerializeField] public ResourceData resourceOne;
 
-        public AttributeData GetAttribute(AttributeName attributeName) => attributeName switch
+        public AttributeData GetAttributeData(AttributeName attributeName) => attributeName switch
         {
             AttributeName.StatZero => statZero,
             AttributeName.StatOne => statOne,

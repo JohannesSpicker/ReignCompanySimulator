@@ -1,6 +1,6 @@
 using System;
 
-namespace Code
+namespace Reign.TurnProgress
 {
     public static class GeneralTurnMessages
     {
