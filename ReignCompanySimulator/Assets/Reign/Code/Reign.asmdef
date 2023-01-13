@@ -2,7 +2,8 @@
     "name": "Reign",
     "rootNamespace": "",
     "references": [
-        "GUID:58fe100f91bb3e24499fdf87975c6d82"
+        "GUID:58fe100f91bb3e24499fdf87975c6d82",
+        "GUID:af946a097b373c4409915d83d520aee2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
