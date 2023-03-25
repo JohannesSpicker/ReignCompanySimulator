@@ -6,7 +6,7 @@
   "unity": "2022.1",
   "unityRelease": "0b5",
   "dependencies": {
-    "com.teppich.teppichstools": "0.0.35"
+    "com.teppich.teppichstools": "0.0.37"
   },
   "keywords": [
     "rpg",
