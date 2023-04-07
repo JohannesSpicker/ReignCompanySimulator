@@ -12,31 +12,43 @@ namespace Reign.Contests.Contests
             Width
         }
 
-        public IContestant activeContestant;
-        public DicePool activeDicePool;
+        public List<Contestant> contestants = new();
+        
+        //does it make sense to have a list
+        //i have 1 or 2 so far, active and inactive
+        //dznamicContest could use multiple
+        //ditto opposed actuallz
+        //static is clearly just one, but group contests could be a thing
+        
+        //contra list: gotta call into that. maybe just use a property and gg.
+        
 
+        public Contestant activeContestant => contestants[0];
+        
         public PassingCondition passingCondition;
         public WinCondition winCondition;
         public int penalties;
 
-        public RolledDice activeRolledDice;
         public bool outcome;
 
         protected Contest(DicePool activeDicePool, PassingCondition passingCondition, WinCondition winCondition,
             int penalties)
         {
-            this.activeDicePool = activeDicePool;
             this.passingCondition = passingCondition;
             this.penalties = penalties;
             this.winCondition = winCondition;
+            
+            this.contestants.Add(new Contestant(activeDicePool));
         }
 
         public abstract bool DetermineOutcome();
         public abstract void MakeRolls();
 
-        protected static RolledDice RollDice(DicePool dicePool, PassingCondition passingCondition,
+        protected static RolledDice RollDice(Contestant contestant, PassingCondition passingCondition,
             WinCondition winCondition, int penalties)
         {
+            DicePool dicePool = contestant.dicePool;
+            
             for (; 0 < penalties && 0 < dicePool.masterDice; penalties--)
                 dicePool.masterDice--;
 

@@ -11,14 +11,14 @@ namespace Reign.Contests.Contests
 
         public override bool DetermineOutcome()
         {
-            outcome = activeRolledDice.HasPassingSet(passingCondition);
+            outcome = activeContestant.rolledDice.HasPassingSet(passingCondition);
 
             return outcome;
         }
 
         public override void MakeRolls()
         {
-            activeRolledDice = RollDice(activeDicePool, passingCondition, winCondition, penalties);
+            RollDice(activeContestant, passingCondition, winCondition, penalties);
         }
     }
 }

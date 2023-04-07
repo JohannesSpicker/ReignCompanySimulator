@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Reign.Contests
+namespace Reign.Contests.Dice
 {
     public class RolledDice
     {
