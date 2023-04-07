@@ -6,8 +6,10 @@ namespace Reign.Contests.Contests
     {
         public Contestant opposingContestant => contestants[1];
 
-        protected SharedContest(DicePool activeDicePool, PassingCondition passingCondition, WinCondition winCondition, int penalties) : base(activeDicePool, passingCondition, winCondition, penalties)
+        protected SharedContest(DicePool activeDicePool, DicePool opposingDicePool, PassingCondition passingCondition,
+            WinCondition winCondition, int penalties) : base(activeDicePool, passingCondition, winCondition, penalties)
         {
+            contestants.Add(new Contestant(opposingDicePool));
         }
     }
 }

@@ -15,10 +15,5 @@ namespace Reign.Contests.Contests
 
             return outcome;
         }
-
-        public override void MakeRolls()
-        {
-            RollDice(activeContestant, passingCondition, winCondition, penalties);
-        }
     }
 }

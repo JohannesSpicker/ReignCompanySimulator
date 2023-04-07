@@ -13,18 +13,8 @@ namespace Reign.Contests.Contests
         }
 
         public List<Contestant> contestants = new();
-        
-        //does it make sense to have a list
-        //i have 1 or 2 so far, active and inactive
-        //dznamicContest could use multiple
-        //ditto opposed actuallz
-        //static is clearly just one, but group contests could be a thing
-        
-        //contra list: gotta call into that. maybe just use a property and gg.
-        
-
         public Contestant activeContestant => contestants[0];
-        
+
         public PassingCondition passingCondition;
         public WinCondition winCondition;
         public int penalties;
@@ -37,18 +27,30 @@ namespace Reign.Contests.Contests
             this.passingCondition = passingCondition;
             this.penalties = penalties;
             this.winCondition = winCondition;
-            
+
             this.contestants.Add(new Contestant(activeDicePool));
         }
 
-        public abstract bool DetermineOutcome();
-        public abstract void MakeRolls();
+        /// <summary>
+        ///     Rolls all the dice.
+        /// </summary>
+        public void MakeRolls()
+        {
+            foreach (var contestant in contestants)
+                RollDice(contestant, passingCondition, winCondition, penalties);
+        }
 
-        protected static RolledDice RollDice(Contestant contestant, PassingCondition passingCondition,
+        /// <summary>
+        /// Calculates the outcome from the rolled dice.
+        /// </summary>
+        /// <returns>Whether the active contestant won</returns>
+        public abstract bool DetermineOutcome();
+
+        private static void RollDice(Contestant contestant, PassingCondition passingCondition,
             WinCondition winCondition, int penalties)
         {
             DicePool dicePool = contestant.dicePool;
-            
+
             for (; 0 < penalties && 0 < dicePool.masterDice; penalties--)
                 dicePool.masterDice--;
 
@@ -79,7 +81,7 @@ namespace Reign.Contests.Contests
             if (0 < dicePool.masterDice)
                 rolledDice.AddDie(FindBestMasterDieValue());
 
-            return rolledDice;
+            contestant.rolledDice = rolledDice;
 
             int FindBestMasterDieValue()
             {

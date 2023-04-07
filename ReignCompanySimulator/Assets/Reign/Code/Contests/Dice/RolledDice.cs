@@ -15,6 +15,12 @@ namespace Reign.Contests.Dice
             waste = dirtySets.Where(s => 1 == s.width).Select(s => s.height).ToList();
         }
 
+        public RolledDice(RolledDice rolledDice)
+        {
+            sets = rolledDice.sets.ToList();
+            waste = rolledDice.waste.ToList();
+        }
+
         public List<Set> sets;
         public List<int> waste;
 
