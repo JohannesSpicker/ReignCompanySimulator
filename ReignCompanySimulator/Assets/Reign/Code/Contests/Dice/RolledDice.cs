@@ -31,7 +31,8 @@ namespace Reign.Contests.Dice
 
         public bool TryGetHighestPassingSet(out Set highestSet, PassingCondition passingCondition)
         {
-            highestSet = sets.Where(s => s.PassesCondition(passingCondition)).OrderByDescending(s => s.height).First();
+            highestSet = sets.Where(s => s.PassesCondition(passingCondition)).OrderByDescending(s => s.height)
+                .FirstOrDefault();
             return highestSet != null;
         }
 
@@ -43,7 +44,7 @@ namespace Reign.Contests.Dice
 
         public bool TryGetHighestWaste(out int highestWaste)
         {
-            highestWaste = waste.Max();
+            highestWaste = waste.OrderByDescending(x => x).FirstOrDefault();
             return waste.Any();
         }
 

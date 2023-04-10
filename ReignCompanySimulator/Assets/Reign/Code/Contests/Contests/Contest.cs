@@ -44,7 +44,13 @@ namespace Reign.Contests.Contests
         /// Calculates the outcome from the rolled dice.
         /// </summary>
         /// <returns>Whether the active contestant won</returns>
-        public abstract bool DetermineOutcome();
+        public bool DetermineOutcome()
+        {
+            outcome = DetermineOutcomeInternal();
+            return outcome;
+        }
+        
+        protected abstract bool DetermineOutcomeInternal();
 
         private static void RollDice(Contestant contestant, PassingCondition passingCondition,
             WinCondition winCondition, int penalties)

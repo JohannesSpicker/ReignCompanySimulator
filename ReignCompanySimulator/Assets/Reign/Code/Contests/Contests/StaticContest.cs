@@ -9,7 +9,7 @@ namespace Reign.Contests.Contests
         {
         }
 
-        public override bool DetermineOutcome()
+        protected override bool DetermineOutcomeInternal()
         {
             outcome = activeContestant.rolledDice.HasPassingSet(passingCondition);
 

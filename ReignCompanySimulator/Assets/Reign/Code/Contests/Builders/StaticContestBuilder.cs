@@ -6,7 +6,7 @@ namespace Reign.Contests.Builders
     {
         protected override StaticContest Build()
         {
-            return new StaticContest(dice, passingCon, winCon, penalty)
+            return new StaticContest(activeDice, passingCon, winCon, penalty)
             {
                 activeContestant =
                 {

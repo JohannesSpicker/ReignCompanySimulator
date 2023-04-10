@@ -7,15 +7,16 @@ namespace Reign.Contests.Builders
 {
     public abstract class ContestBuilder<T> : Builder<T> where T : Contest
     {
-        protected DicePool dice;
         protected PassingCondition passingCon;
         protected int penalty;
         protected Contest.WinCondition winCon;
+        
+        protected DicePool activeDice;
         protected RolledDice activeRolledDice;
 
         public ContestBuilder<T> WithDicePool(DicePool dicePool)
         {
-            dice = dicePool;
+            activeDice = dicePool;
             return this;
         }
 
