@@ -16,7 +16,3 @@
 wild idea: make this a city simulator god game.
 you would influence the context of the companies,
 so that they then make decisions in different manners
-
-
-concrete note pad:
-rolls need to be cool and accessible

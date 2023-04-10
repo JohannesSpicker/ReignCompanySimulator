@@ -1,4 +1,4 @@
-﻿namespace Reign.Contests
+﻿namespace Reign.Contests.Dice
 {
     public class Set
     {

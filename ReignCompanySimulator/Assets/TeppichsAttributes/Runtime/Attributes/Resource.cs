@@ -10,12 +10,12 @@ namespace TeppichsAttributes.Attributes
     /// </summary>
     public sealed class Resource : Attribute
     {
-        public readonly Attribute    maxAttribute;
+        public readonly Attribute maxAttribute;
         public readonly ResourceData resourceData;
 
         public Resource(ResourceData data, float baseValue, Attribute maxAttribute = null) : base(data, baseValue)
         {
-            resourceData      = data;
+            resourceData = data;
             this.maxAttribute = maxAttribute;
 
             if (maxAttribute is { })
@@ -30,8 +30,8 @@ namespace TeppichsAttributes.Attributes
 
         private void ReactToMaxAttributeChange(float change)
         {
-            if ((0         < change && resourceData.increaseValueOnMaxAttributeChange)
-                || (change < 0      && resourceData.decreaseValueOnMaxAttributeChange))
+            if ((0 < change && resourceData.increaseValueOnMaxAttributeChange)
+                || (change < 0 && resourceData.decreaseValueOnMaxAttributeChange))
                 AddToValue(change);
             else if (maxAttribute.Value < Value)
                 AddToValue(0f);
@@ -48,8 +48,9 @@ namespace TeppichsAttributes.Attributes
         }
 
         public override void AddToBaseValue(float amount) => Gain(amount);
-        public          void Gain(float           amount) => AddToValue(amount);
-        public          void Spend(float          amount) => AddToValue(-amount);
+        public void Gain(float amount) => AddToValue(amount);
+        public void Spend(float amount) => AddToValue(-amount);
+        public void SetTo(float amount) => AddToValue(amount - Value);
 
         public override void AddModifier(Modifier modifier) =>
             AlterValue(modifier.value, modifier.type is ModifierType.Flat ? Addition : Multiplication);
@@ -69,7 +70,7 @@ namespace TeppichsAttributes.Attributes
             InvokeOnAttributeValueChangedByAmount(before);
         }
 
-        private void Addition(float       amount) => Value += amount;
+        private void Addition(float amount) => Value += amount;
         private void Multiplication(float factor) => Value *= factor;
 
         public void ResetToBaseValue() => AlterValue(BaseValue - Value, Addition);
