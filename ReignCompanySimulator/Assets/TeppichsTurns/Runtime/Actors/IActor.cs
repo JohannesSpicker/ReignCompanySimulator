@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 
 namespace TeppichsTurns.Actors
 {
@@ -8,6 +8,6 @@ namespace TeppichsTurns.Actors
         ///     Process an actor turn.
         /// </summary>
         /// <param name="callback">Action to invoke to give control back to the <see cref="TurnOrder" /></param>
-        void DoTurn(Action callback);
+        IEnumerator DoTurn();
     }
 }

@@ -7,6 +7,6 @@ namespace Reign.TurnProgress
     [CreateAssetMenu(menuName = "Create AllTheCompanyDatas", fileName = "AllTheCompanyDatas", order = 0)]
     public class AllTheCompanyDatas : ScriptableObject
     {
-        public List<AttributeConfig> companyAttributes = new List<AttributeConfig>();
+        public List<AttributeConfig> companyAttributeConfigs = new();
     }
 }

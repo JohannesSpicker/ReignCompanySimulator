@@ -3,9 +3,11 @@ using TeppichsTurns.Actors;
 
 namespace TeppichsTurns.Iterators
 {
-    public class StartPlayerIterator : SimpleTurnIterator
+    public class StartPlayerIterator : SimpleTurnIterator<IActor>
     {
         protected int startingPlayerIndex = -1;
+
+        public StartPlayerIterator(List<IActor> actors) : base(actors) { }
 
         protected override void StartTurn()
         {

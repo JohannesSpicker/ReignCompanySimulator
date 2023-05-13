@@ -1,17 +1,20 @@
+using System.Collections.Generic;
 using System.Linq;
 using Sirenix.Utilities;
 using TeppichsTurns.Actors;
 
 namespace TeppichsTurns.Iterators
 {
-    public abstract class SimpleTurnIterator : CurrentTurnIterator
+    public abstract class SimpleTurnIterator<T> : CurrentTurnIterator<T> where T : IActor
     {
-        public override IActor GetNextActor()
+        protected SimpleTurnIterator(List<T> actors) : base(actors) { }
+
+        public override T GetNextActor()
         {
             if (currentTurn.IsNullOrEmpty())
                 StartTurn();
 
-            IActor nextActor = currentTurn.First();
+            T nextActor = currentTurn.First();
             currentTurn.Remove(nextActor);
 
             return nextActor;

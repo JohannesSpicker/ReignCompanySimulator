@@ -3,13 +3,15 @@ using TeppichsTurns.Actors;
 
 namespace TeppichsTurns.Iterators
 {
-    public abstract class TurnIterator
+    public abstract class TurnIterator<T> where T : IActor
     {
-        protected readonly List<IActor> actors = new();
+        protected readonly List<T> actors;
 
-        public virtual void AddActor(IActor    actor) => actors.Add(actor);
-        public virtual void RemoveActor(IActor actor) => actors.Remove(actor);
+        protected TurnIterator(List<T> actors) { this.actors = actors; }
 
-        public abstract IActor GetNextActor();
+        public virtual void AddActor(T    actor) => actors.Add(actor);
+        public virtual void RemoveActor(T actor) => actors.Remove(actor);
+
+        public abstract T GetNextActor();
     }
 }
