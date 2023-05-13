@@ -13,47 +13,49 @@ namespace Reign.Contests.Contests
         }
 
         public List<Contestant> contestants = new();
-        public Contestant activeContestant => contestants[0];
-
-        public PassingCondition passingCondition;
-        public WinCondition winCondition;
-        public int penalties;
 
         public bool outcome;
 
+        public PassingCondition passingCondition;
+        public int              penalties;
+        public WinCondition     winCondition;
+
         protected Contest(DicePool activeDicePool, PassingCondition passingCondition, WinCondition winCondition,
-            int penalties)
+                          int      penalties)
         {
             this.passingCondition = passingCondition;
-            this.penalties = penalties;
-            this.winCondition = winCondition;
+            this.penalties        = penalties;
+            this.winCondition     = winCondition;
 
-            this.contestants.Add(new Contestant(activeDicePool));
+            contestants.Add(new Contestant(activeDicePool));
         }
+
+        public Contestant ActiveContestant => contestants[0];
 
         /// <summary>
         ///     Rolls all the dice.
         /// </summary>
         public void MakeRolls()
         {
-            foreach (var contestant in contestants)
+            foreach (Contestant contestant in contestants)
                 RollDice(contestant, passingCondition, winCondition, penalties);
         }
 
         /// <summary>
-        /// Calculates the outcome from the rolled dice.
+        ///     Calculates the outcome from the rolled dice.
         /// </summary>
         /// <returns>Whether the active contestant won</returns>
         public bool DetermineOutcome()
         {
             outcome = DetermineOutcomeInternal();
+
             return outcome;
         }
-        
+
         protected abstract bool DetermineOutcomeInternal();
 
-        private static void RollDice(Contestant contestant, PassingCondition passingCondition,
-            WinCondition winCondition, int penalties)
+        private static void RollDice(Contestant   contestant,   PassingCondition passingCondition,
+                                     WinCondition winCondition, int              penalties)
         {
             DicePool dicePool = contestant.dicePool;
 
@@ -63,7 +65,7 @@ namespace Reign.Contests.Contests
             if (1 < dicePool.masterDice)
             {
                 dicePool.expertDice += dicePool.masterDice - 1;
-                dicePool.masterDice = 1;
+                dicePool.masterDice =  1;
             }
 
             for (; 0 < penalties && 0 < dicePool.expertDice; penalties--)
@@ -74,7 +76,7 @@ namespace Reign.Contests.Contests
 
             List<int> rolled = new();
 
-            for (var i = 10; 0 < dicePool.expertDice && 0 < i; i--)
+            for (int i = 10; 0 < dicePool.expertDice && 0 < i; i--)
             {
                 rolled.Add(i);
                 dicePool.expertDice--;
@@ -82,7 +84,7 @@ namespace Reign.Contests.Contests
 
             rolled.AddRange(TeppichsDice.Dice.D10(dicePool.dice + dicePool.expertDice));
 
-            var rolledDice = new RolledDice(rolled);
+            RolledDice rolledDice = new(rolled);
 
             if (0 < dicePool.masterDice)
                 rolledDice.AddDie(FindBestMasterDieValue());
@@ -91,17 +93,17 @@ namespace Reign.Contests.Contests
 
             int FindBestMasterDieValue()
             {
-                var alteredPassingCondition =
-                    new PassingCondition(passingCondition.minHeight, passingCondition.minWidth - 1);
+                PassingCondition alteredPassingCondition =
+                    new(passingCondition.minHeight, passingCondition.minWidth - 1);
 
                 if (winCondition == WinCondition.Height)
                 {
                     List<int> candidates = new();
 
-                    if (alteredPassingCondition.minWidth < 2 && rolledDice.TryGetHighestWaste(out var highestWaste))
+                    if (alteredPassingCondition.minWidth < 2 && rolledDice.TryGetHighestWaste(out int highestWaste))
                         candidates.Add(highestWaste);
 
-                    if (rolledDice.TryGetHighestPassingSet(out var highestSet, alteredPassingCondition))
+                    if (rolledDice.TryGetHighestPassingSet(out Set highestSet, alteredPassingCondition))
                         candidates.Add(highestSet.height);
 
                     if (candidates.Any())
@@ -109,10 +111,10 @@ namespace Reign.Contests.Contests
                 }
                 else
                 {
-                    if (rolledDice.TryGetWidestPassingSet(out var widestSet, alteredPassingCondition))
+                    if (rolledDice.TryGetWidestPassingSet(out Set widestSet, alteredPassingCondition))
                         return widestSet.height;
 
-                    if (alteredPassingCondition.minWidth < 2 && rolledDice.TryGetHighestWaste(out var highestWaste))
+                    if (alteredPassingCondition.minWidth < 2 && rolledDice.TryGetHighestWaste(out int highestWaste))
                         return highestWaste;
                 }
 

@@ -1,6 +1,6 @@
 ﻿namespace TeppichsTurns.Actors
 {
-    public interface IInitiative
+    public interface IInitiativeActor : IComparableActor<IInitiativeActor>
     {
         int CurrentInitiative { get; set; }
         int RollInitiative();

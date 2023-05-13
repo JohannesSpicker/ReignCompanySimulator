@@ -12,7 +12,7 @@ namespace Reign.Contests.Contests
 
         protected override bool DetermineOutcomeInternal()
         {
-            RolledDice activeDice = new RolledDice(activeContestant.rolledDice);
+            RolledDice activeDice = new RolledDice(ActiveContestant.rolledDice);
             RolledDice opposingDice = new RolledDice(opposingContestant.rolledDice);
 
             bool isHeight = winCondition is WinCondition.Height;

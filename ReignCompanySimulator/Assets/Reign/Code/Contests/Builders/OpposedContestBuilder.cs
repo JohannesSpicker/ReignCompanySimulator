@@ -8,7 +8,7 @@ namespace Reign.Contests.Builders
         {
             return new OpposedContest(activeDice, opposedDice, passingCon, winCon, penalty)
             {
-                activeContestant = { rolledDice = activeRolledDice },
+                ActiveContestant = { rolledDice = activeRolledDice },
                 opposingContestant = { rolledDice = opposedRolledDice }
             };
         }

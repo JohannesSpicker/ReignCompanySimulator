@@ -4,9 +4,6 @@ namespace TeppichsTurns.Iterators
 {
     public class ClockwiseTurnIterator : SimpleTurnIterator
     {
-        protected override void StartTurn()
-        {
-            currentTurn = actors.ToList();
-        }
+        protected override void StartTurn() => currentTurn = actors.ToList();
     }
 }

@@ -8,7 +8,7 @@ namespace Reign.Contests.Builders
         {
             return new StaticContest(activeDice, passingCon, winCon, penalty)
             {
-                activeContestant =
+                ActiveContestant =
                 {
                     rolledDice = activeRolledDice
                 }

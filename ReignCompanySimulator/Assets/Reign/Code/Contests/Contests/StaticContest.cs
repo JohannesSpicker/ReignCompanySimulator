@@ -11,7 +11,7 @@ namespace Reign.Contests.Contests
 
         protected override bool DetermineOutcomeInternal()
         {
-            outcome = activeContestant.rolledDice.HasPassingSet(passingCondition);
+            outcome = ActiveContestant.rolledDice.HasPassingSet(passingCondition);
 
             return outcome;
         }

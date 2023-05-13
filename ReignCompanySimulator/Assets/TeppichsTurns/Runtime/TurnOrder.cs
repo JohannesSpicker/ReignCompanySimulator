@@ -9,6 +9,6 @@ namespace TeppichsTurns
         private List<IActor> actors = new();
         private TurnIterator turnIterator;
 
-        private void ProcessTurn() => turnIterator.GetNextActor().DoTurn(ProcessTurn);
+        public void ProcessTurn() => turnIterator.GetNextActor().DoTurn(ProcessTurn);
     }
 }
