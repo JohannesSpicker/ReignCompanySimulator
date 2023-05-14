@@ -11,14 +11,19 @@ namespace Reign.TurnProgress
     /// </summary>
     public class GameManager : MonoBehaviour
     {
+        public static bool          gameIsRunning = true;
+        public static List<Company> companies     = new();
+
         [SerializeField] private QualityDataHolder  qualityDataHolder;
         [SerializeField] private AllTheCompanyDatas allTheCompanyDatas;
 
-        private List<Company> companies = new();
-
-        private bool gameIsRunning = true;
-
         private ReignTurnIterator turnIterator;
+
+        public static QualityDataHolder QualityDataHolder { get; private set; }
+
+        public static float CompanyTickInSeconds => 1f;
+
+        private void Awake() => QualityDataHolder = qualityDataHolder;
 
         private void Start()
         {

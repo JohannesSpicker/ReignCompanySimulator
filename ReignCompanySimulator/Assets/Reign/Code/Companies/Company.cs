@@ -35,6 +35,9 @@ namespace Reign.Companies
 
         #region Turn
 
+        public bool CanDoTurn => 2 <= RemainingMight.Value + RemainingTreasure.Value + RemainingInfluence.Value
+            + RemainingTerritory.Value                     + RemainingSovereignty.Value;
+
         public IEnumerator DoTurn()
         {
             Debug.Log($"Company {name} did a company turn.");
@@ -68,6 +71,23 @@ namespace Reign.Companies
         public Resource RemainingInfluence   => qualities.GetResource(qualityDataHolder.remainingInfluence);
         public Resource RemainingTerritory   => qualities.GetResource(qualityDataHolder.remainingTerritory);
         public Resource RemainingSovereignty => qualities.GetResource(qualityDataHolder.remainingSovereignty);
+
+        public int UseMight()       => UseResource(RemainingMight);
+        public int UseTreasure()    => UseResource(RemainingTreasure);
+        public int UseInfluence()   => UseResource(RemainingInfluence);
+        public int UseTerritory()   => UseResource(RemainingTerritory);
+        public int UseSovereignty() => UseResource(RemainingSovereignty);
+
+        private int UseResource(Resource resource)
+        {
+            if (resource.Value <= 0)
+                return 0;
+
+            int remaining = (int)resource.Value;
+            resource.Spend(1);
+
+            return remaining;
+        }
 
         #endregion
     }

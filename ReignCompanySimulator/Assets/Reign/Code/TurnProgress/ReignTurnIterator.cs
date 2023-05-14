@@ -8,6 +8,7 @@ namespace Reign.TurnProgress
 {
     public class ReignTurnIterator : CurrentTurnIterator<Company>
     {
+        private List<Company> currentRound;
         public ReignTurnIterator(List<Company> actors) : base(actors) { }
 
         public override Company GetNextActor()
@@ -15,8 +16,14 @@ namespace Reign.TurnProgress
             if (currentTurn.IsNullOrEmpty())
                 StartTurn();
 
-            Company nextActor = currentTurn.First();
-            currentTurn.Remove(nextActor);
+            if (currentRound.IsNullOrEmpty())
+                currentRound = currentTurn.ToList();
+            
+            Company nextActor = currentRound.First();
+            currentRound.Remove(nextActor);
+
+            if (!nextActor.CanDoTurn)//TODO: if this one can't do anything, find another actor
+                currentTurn.Remove(nextActor);
 
             return nextActor;
         }
