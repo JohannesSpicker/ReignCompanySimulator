@@ -2,21 +2,22 @@ using System.Collections;
 using Reign.TurnProgress;
 using TeppichsAttributes.Attributes;
 using TeppichsTurns.Actors;
-using UnityEngine;
 
 namespace Reign.Companies
 {
     public class Company : IComparableActor<Company>
     {
-        public string name = "Some Company";
+        private readonly AttributeContainer qualities;
+        private readonly QualityDataHolder  qualityDataHolder;
 
-        private AttributeContainer qualities;
-        private QualityDataHolder  qualityDataHolder;
+        private CompanyBrain brain;
+        public  string       name = "Some Company";
 
         public Company(AttributeContainer qualities, QualityDataHolder qualityDataHolder)
         {
             this.qualities         = qualities;
             this.qualityDataHolder = qualityDataHolder;
+            brain                  = new CompanyBrain(this);
         }
 
         private void Subscribe()
@@ -35,15 +36,9 @@ namespace Reign.Companies
 
         #region Turn
 
-        public bool CanDoTurn => 2 <= RemainingMight.Value + RemainingTreasure.Value + RemainingInfluence.Value
-            + RemainingTerritory.Value                     + RemainingSovereignty.Value;
+        public bool CanDoTurn => brain.CanDoSomething();
 
-        public IEnumerator DoTurn()
-        {
-            Debug.Log($"Company {name} did a company turn.");
-
-            yield return null;
-        }
+        public IEnumerator DoTurn() { yield return brain.DoAnAction(); }
 
         public int CompareTo(Company other) => Sovereignty.Value.CompareTo(other.Sovereignty.Value);
 

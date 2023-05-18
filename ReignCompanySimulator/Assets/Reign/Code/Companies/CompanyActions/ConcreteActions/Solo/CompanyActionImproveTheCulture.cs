@@ -1,4 +1,5 @@
-﻿using TeppichsAttributes.Attributes;
+﻿using Reign.Contests.Dice;
+using TeppichsAttributes.Attributes;
 
 namespace Reign.Companies.CompanyActions
 {
@@ -6,10 +7,13 @@ namespace Reign.Companies.CompanyActions
     {
         protected override string ActionName => "Improve The Culture";
 
-        public override bool IsViable(Company company) =>
-            2 <= company.RemainingTerritory.Value + company.RemainingTreasure.Value;
+        public override bool IsViable(Company company) => base.IsViable(company)
+                                                          && 2 <= company.RemainingTerritory.Value
+                                                          + company.RemainingTreasure.Value;
 
-        protected override int  GetActivePool(Company company) => company.UseTerritory() + company.UseTreasure();
+        protected override DicePool GetActivePool(Company company) =>
+            new(company.UseTerritory() + company.UseTreasure());
+
         protected override Stat StatToImprove(Company company) => company.Sovereignty;
     }
 }

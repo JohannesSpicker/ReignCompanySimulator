@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using Reign.Contests;
 using Reign.Contests.Contests;
-using Reign.Contests.Dice;
 using Reign.TurnProgress;
 using TeppichsAttributes.Attributes;
 using UnityEngine;
@@ -14,7 +13,7 @@ namespace Reign.Companies.CompanyActions
 
         public override IEnumerator ProcessAction(Company activeCompany, Company _)
         {
-            StaticContest staticContest = new(new DicePool(GetActivePool(activeCompany)),
+            StaticContest staticContest = new(GetActivePool(activeCompany),
                                               new PassingCondition((int)StatToImprove(activeCompany).Value, 2),
                                               Contest.WinCondition.Height, 0);
 
@@ -28,6 +27,8 @@ namespace Reign.Companies.CompanyActions
 
             yield return new WaitForSeconds(GameManager.CompanyTickInSeconds);
         }
+
+        public override bool IsViable(Company company) => !StatToImprove(company).IsAtMaxValue;
 
         //TODO: also implement the temporary version
     }

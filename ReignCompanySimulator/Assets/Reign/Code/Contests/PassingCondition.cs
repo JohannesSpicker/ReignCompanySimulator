@@ -10,5 +10,7 @@ namespace Reign.Contests
             this.minHeight = minHeight;
             this.minWidth = minWidth;
         }
+
+        public static PassingCondition Default => new PassingCondition(1, 2);
     }
 }

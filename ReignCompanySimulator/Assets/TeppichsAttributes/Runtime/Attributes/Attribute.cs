@@ -38,6 +38,9 @@ namespace TeppichsAttributes.Attributes
             return newValue;
         }
 
+        public bool IsAtMaxValue => data.usesMaxValue && Value == data.maxValue;
+        public bool IsAtMinValue => data.usesMinValue && Value == data.minValue;
+
         #endregion
 
         #region Modify
