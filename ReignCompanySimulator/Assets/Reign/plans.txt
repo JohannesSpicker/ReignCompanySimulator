@@ -16,3 +16,27 @@
 wild idea: make this a city simulator god game.
 you would influence the context of the companies,
 so that they then make decisions in different manners
+
+-----
+
+how to make companies more interesting?
+   - make them smarter
+        - anything but a random AI sounds awesome
+            - could just build different brains for companies, then later throw them all into one pool
+            - if-chain
+            - state machine
+            - behavior tree
+   - planning and knowledge
+        - blackboard
+        - planner AI
+   - morale?
+   - assets
+   - faces
+   - history
+   - properties
+   - company builder like the character journeys in Traveller
+        - events
+        - decisions
+        - accumulating a character sheet
+            - stats
+            - aspects

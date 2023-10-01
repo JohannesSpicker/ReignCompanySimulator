@@ -1,0 +1,170 @@
+- companies have assets
+
+- custom asset creation guidelines:
+    - If an Asset gives a +2d bonus to a company’s Quality or pool, it should only do it in a very
+narrow set of circumstances. This could be for one particular type of roll (“only Might rolls
+made to defend Territory”), or after a certain prerequisite is fulfilled (“after the Company has
+convinced the targets of some relevant lie”).
+    - If an Asset gives a +3d bonus, it should only be usable one time, and in narrow circumstances.
+
+
+Influence Assets
+
+Being a shifty and liquid property already, “the ability to change minds and learn things”
+lends itself readily to situational edges.
+Sinister Operatives
+Agents of this stripe never show up on battlefields, never engage in fair fights and
+almost never reveal their origin (if they even know it). Sometimes they’re heartless
+mercenaries. Other times they’re ideological fanatics. You get a +2d bonus when rolling
+Might+Influence to perform an act of unconventional warfare. This bonus isn’t applied
+for escape, or when they’re trying to avoid detection beforehand.
+Epic History
+Your Company, or the people in it, have a history of impressive deeds. Perhaps their
+ancestors were great heroes ages ago, or perhaps they did something mighty just last year.
+However it went, the people in the Company know they have something to be proud of,
+and it shows. +2d bonus every time you roll Sovereignty+Treasure to temporarily increase
+your Influence.
+Small Horizon
+It seems like everybody knows everybody else -- and knows their business. Even a huge
+nation can seem claustrophobic if its gossip web is sufficiently broad. Or your Company
+may be a claustrophobic small town. When rolling Sovereignty+Treasure to improve
+Influence, the Difficulty is always reduced by 1.
+Entangling Alliance
+Your Company is tightly linked with another, though they remain separate and
+autonomous. It could be through a formal treaty, a political marriage, vassalage to the
+same master, religious obligations or cultural tradition. Pick one other Company. You
+have +2 Influence when dealing with them, and they have +2 Influence when dealing with
+you. This can’t push Influence above 6.
+Assets
+105
+Companies
+Eloquent Diplomats
+Your company has a cadre of professional negotiators who do nothing but pursue your
+interests. It may be an entire corps of elaborately-titled ambassadors, it may be a few
+bards with great hair, or it could just be the village brewer. You get a +2d bonus to all rolls
+when rolling Influence+Treasure to alter opinions in another Company.
+Mole
+Someone in a sensitive position owes you. You can call in this debt one time only. After
+that your mole decides you’re even, or gets discovered and loses his authority (if not his
+life), or he loses power because the results of his betrayal are perceived as incompetence.
+Pick one Company and one specific use of Influence. The next time you roll that use of
+Influence against that Company, add a +3d bonus.
+Might Assets
+Every army has its strengths and weaknesses, so a straight Might rating with no Assets
+indicates a superbly balanced force. To give a force a little more flavor, use these Assets.
+Irregular Forces
+People who specialize excel, but often at the cost of versatility. Irregular forces are
+versatile, often at the cost of excellence at any one task. They can’t fight an entrenched
+battle like heavy infantry. They’re not as mobile as cavalry or as devastating as siege
+engines. But when it comes to dirty deeds and living to tell the tale, they’re unparalleled.
++2d bonus when rolling Might+Influence to get troops out after an Unconventional
+Attack. This bonus does not apply to the attack itself or to staying hidden beforehand.
+Shipshape Navy
+Numbers are a major factor in a military conflict—but only if they can be safely delivered
+to the battle. A small army may have an advantage if it’s experienced with amphibious
+assault and has reliable boats to drop it at vulnerable points along the enemy’s coast. (For
+ship to ship engagements, the benefits of better boats are obvious.) +2d bonus to all Might
+rolls made when your Company is fighting aboard ships or boats.
+Magic Resistant
+Average bulk soldiers are vulnerable to powerful magic. Most soldiers are frightened by
+magic—and if they’ve seen a friend reduced to ashes by it, that’s a justified fear.
+Some fighting forces are less intimidated, however. It may be that they’re tough, brave
+and experienced. It may be they’re from a sorcerous culture and regard it with proper
+fear, but no more than is proper. Or it may be blissful ignorance. Add a +2d bonus to
+Might rolls when your enemy depends heavily on sorcery.
+Assets
+106
+Chapter Four
+Keen
+Is there a nice way to say, “your military forces kill with enthusiasm”? It may be bloodlust, or
+it could be that grim experience has taught them that when you’re ahead, you don’t relax. +2d
+to all rolls when Might is brought to bear against a Company with lower permanent Might.
+Classic Enemy
+There is some group that has, historically and throughout legend, been the enemy of
+your Company. Realizing they’re behind an attack lights a fire of righteous rage in every
+defender’s heart. Pick one particular other Company, religion, or ethnicity that your
+followers consider blasphemous, evil, or a rival. If you’re attacked by members of that
+group, you have a +3d bonus to the first Might+Territory roll you make in defense.
+Unexpected Deliverance
+At some point, a battle turns unexpectedly, due to an unforeseen factor. (At the very least,
+unforeseen by the people on the bad side of the Asset.) Whether it’s fate, a carefully planned
+long term strategy, the arrival of an unlooked-for hero, or dumb luck, it is a very big deal.
+You can add a +3d bonus to one attack or defense roll. Choose attack or defense when
+gaining the Asset. It’s a one-time thing.
+Sovereignty Assets
+Loyalty. Honor. Obedience. These intangible principles are the glue that connect the
+disparate elements of a culture. Some elements may be a bit more disparate than others.
+Mass Appeal
+Something about your Company appeals to the ordinary people who support it. This could
+be ideological, practical, or a matter of perfect style. When rolling Territory+Treasure to
+raise Sovereignty, or Sovereignty+Territory to raise Might, reduce any Difficulty by 1.
+Patriotism
+Your company inspires loyalty above and beyond self-interest. Members go the extra
+mile, not because they expect reward, but because contributing is itself rewarding to
+them. +2d to Might+Sovereignty rolls for policing against unconventional attacks.
+Defiant Tradition
+If your Company has a history of repulsing an invader, citizens are likely to have casual
+knowledge of insurgent tactics—and encouraging stories to tell. Defiant cultures
+aren’t the easiest to govern, but they don’t cave when times turn bad. +1d bonus to all
+Sovereignty rolls if your Company is under attack from an outside force.
+Assets
+107
+Companies
+Culture of Shame and Gossip
+Your group has a self-righteous streak, expressed by a tendency to shame those who
+transgress the rules (written or unwritten). “Keep your mouth shut about other
+people’s failings” is emphatically not one of those rules. +2 bonus when making
+Might+Sovereignty rolls to police the populace.
+Territory Assets
+Land isn’t just an unrelieved plain of farmland. The same elements that make a
+countryside interesting to they eye provide variety to the finances of those who dwell there.
+Fortune Smiles
+Economies are complex systems buffeted by the effects of other complex systems, making
+the whole enterprise utterly unpredictable. Sometimes, this produces unlooked-for
+benefits. +3d to the next roll that incorporates Territory.
+Foundries, Smiths and Armorers
+Manpower is an element of military strength, but giving soldiers something to stab
+with and something to hide behind is also important. Your Company can equip its
+troops and repair or replace equipment broken by the stresses of conflict. +2d bonus to
+Sovereignty+Territory rolls to increase Might.
+Defensible Terrain
+Something in your land is a real pain in the arse for enemies to cross. It could be
+mountains, a raging river, monster-infested woods, a string of fortresses, a blazing desert,
+a big long wall—whatever it is, it really softens up anyone who tries to attack through
+it. +2 bonus to Might+Territory rolls to defend your lands, if the attackers try to come
+through the defensible area.
+Cultural Tradition
+Your Company has a longstanding artistic history of methods, themes and techniques.
+Artisans and speakers can draw from these to produce something unique to your
+people. Companies without these touchstones have to start every act of persuasion from
+scratch. You get to stand on the shoulders of giants. Add a +2d bonus when rolling
+Territory+Treasure to temporarily raise Sovereignty.
+Treasure Assets
+Treasure is specific. You either have gleaming arrays of coin, or you don’t. But since
+Treasure also governs how you arrange and control your money, there are a few Assets
+that can make your money specialize.
+Assets
+108
+Chapter Four
+Unbalanced Economy
+It’s not necessarily bad that your cash flow ebbs predictably. Like the tides, what goes
+out eventually comes back in. This may be due to yearly loans given to cash -poor nobles
+before tax time, or a predictable crop. Pick six months of the year. You get +2 Treasure
+during those months. During the other six months, you’re at –1 Treasure.
+Permanent Underclass
+It’s unpleasant, but having a designated ethnic minority, or family, or group of social
+outcasts who perform the ugly scutwork can be a very slippery grease for progress.
+Oppressing these underlings can yield bounties, as long as you don’t care or can drink
+yourself to sleep afterwards. They’ll recover, right? They’re used to it. Once per year you
+may permanently decrease Sovereignty by 1 in order to permanently raise Treasure by 1.
+Rules of Plunder
+Your military forces have some sort of discipline that controls their looting and pillaging.
+It could be a code of honor, or rigidly enforced laws, or an officer corps that gets the
+goodies first. Whatever it is, it means that your Company is good at making defeated
+enemies pay for the costs of their own defeat. On the first Might+Treasure roll made to
+attack in a single month, change one regular die to an ED.
+Predictable Bounty
+There’s some time of year when your Company has it good. It could be a harvest festival, it
+could be when the snow pack melts and the traveling merchants come, it could be a holiday
+or religious event. Money flows freely and people let down their guard. Pick one month per
+year, during which your Company temporarily has +1 Territory, +1 Treasure and –1 Migh

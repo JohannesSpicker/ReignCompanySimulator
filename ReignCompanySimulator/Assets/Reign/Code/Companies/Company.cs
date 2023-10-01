@@ -38,7 +38,10 @@ namespace Reign.Companies
 
         public bool CanDoTurn => brain.CanDoSomething();
 
-        public IEnumerator DoTurn() { yield return brain.DoAnAction(); }
+        public IEnumerator DoTurn()
+        {
+            yield return brain.DoAnAction();
+        }
 
         public int CompareTo(Company other) => Sovereignty.Value.CompareTo(other.Sovereignty.Value);
 
